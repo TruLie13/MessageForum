@@ -14,9 +14,9 @@ import { useState } from "react";
 const ForumBase = () => {
   const [thumbsUpTrue, setThumbsUpTrue] = useState(false);
 
-  const thumbFlip = () => {
-    setThumbsUpTrue(!thumbsUpTrue);
-  };
+  // const thumbFlip = () => {
+  //   setThumbsUpTrue(!thumbsUpTrue);
+  // };
 
   return (
     <div className="forumBase">
