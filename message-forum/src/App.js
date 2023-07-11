@@ -1,9 +1,10 @@
-import logo from './logo.svg';
 import './App.css';
+import ForumBase from './Components/ForumBase.component';
 
 function App() {
   return (
     <div className="App">
+      <ForumBase/>
     </div>
   );
 }
