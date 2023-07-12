@@ -14,11 +14,11 @@ import { mockUsers } from "../mockData";
 import { mockData } from "../mockData";
 
 const ForumBase = () => {
-  const [thumbsUpTrue, setThumbsUpTrue] = useState(false);
+  const [thumbsUpTrue, setThumbsUpTrue] = useState(null);
 
-  // const thumbFlip = () => {
-  //   setThumbsUpTrue(!thumbsUpTrue);  q
-  // };
+  const thumbFlip = () => {
+    setThumbsUpTrue(!thumbsUpTrue);
+  };
 
   console.log("za mock", mockData);
 
@@ -42,17 +42,23 @@ const ForumBase = () => {
               </Card>
               {mockData.events[0].messages[0].author} :{" "}
               {mockData.events[0].messages[0].authorScore}
-              Like button{" "}
-              <Button onClick={() => null}>
-                {thumbsUpTrue ? <ThumbUpIcon /> : <ThumbUpAltOutlinedIcon />}
-              </Button>
-              <Button>
-                {!thumbsUpTrue ? (
-                  <ThumbDownAltOutlinedIcon />
-                ) : (
-                  <ThumbDownIcon />
-                )}
-              </Button>
+              <div className="likeDislikeButtons">
+                Like button{" "}
+                <Button onClick={thumbFlip}>
+                  {thumbsUpTrue === null || thumbsUpTrue === false ? (
+                    <ThumbUpAltOutlinedIcon />
+                  ) : (
+                    <ThumbUpIcon />
+                  )}
+                </Button>
+                <Button>
+                  {thumbsUpTrue === null || thumbsUpTrue === true ? (
+                    <ThumbDownAltOutlinedIcon />
+                  ) : (
+                    <ThumbDownIcon />
+                  )}
+                </Button>
+              </div>
               {mockData.events[0].messages[0].messageVotes}
             </div>
           </AccordionDetails>
