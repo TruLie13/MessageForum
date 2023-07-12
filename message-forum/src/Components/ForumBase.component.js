@@ -64,56 +64,6 @@ const ForumBase = () => {
           </AccordionDetails>
         </Accordion>
       ))}
-
-      {/* <Accordion key={mockData.eventID} body={mockData}> 
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography>Community Event Forum</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <div className="forumMessageCard">
-            <Card>
-              <Typography>
-                {mockData.events[0].messages[0].author} : {mockData.events[0].messages[0].authorScore}
-                {mockData.events[0].messages[0].messageBody}
-                {mockData.events[0].messages[0].messageVotes}
-
-                {mockData.events[0].messages[1].author} : {mockData.events[0].messages[1].authorScore}
-                {mockData.events[0].messages[1].messageBody}
-                {mockData.events[0].messages[1].messageVotes}
-
-                {mockData.events[1].messages[0].author} : {mockData.events[1].messages[0].authorScore}
-                {mockData.events[1].messages[0].messageBody}
-                {mockData.events[1].messages[0].messageVotes}
-
-                {mockData.events[1].messages[1].author} : {mockData.events[1].messages[1].authorScore}
-                {mockData.events[1].messages[1].messageBody}
-                {mockData.events[1].messages[1].messageVotes}
-
-                {mockData.events[2].messages[0].author} : {mockData.events[2].messages[0].authorScore}
-                {mockData.events[2].messages[0].messageBody}
-                {mockData.events[2].messages[0].messageVotes}
-
-                {mockData.events[2].messages[1].author} : {mockData.events[2].messages[1].authorScore}
-                {mockData.events[2].messages[1].messageBody}
-                {mockData.events[2].messages[1].messageVotes}
-              </Typography>
-            </Card>
-            {mockData.events[0].messages[0].author} : {mockData.events[0].messages[0].authorScore}
-            Like button{" "}
-            <Button onClick={() => null}>
-              {thumbsUpTrue ? <ThumbUpIcon /> : <ThumbUpAltOutlinedIcon />}
-            </Button>
-            <Button>
-              {!thumbsUpTrue ? <ThumbDownAltOutlinedIcon /> : <ThumbDownIcon />}
-            </Button>
-                {mockData.events[0].messages[0].messageVotes}
-          </div>
-        </AccordionDetails>
-      </Accordion> */}
     </div>
   );
 };
