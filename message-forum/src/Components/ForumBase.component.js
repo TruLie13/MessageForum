@@ -17,12 +17,49 @@ const ForumBase = () => {
   const [thumbsUpTrue, setThumbsUpTrue] = useState(false);
 
   // const thumbFlip = () => {
-  //   setThumbsUpTrue(!thumbsUpTrue);
+  //   setThumbsUpTrue(!thumbsUpTrue);  q
   // };
+
+  console.log("za mock", mockData);
 
   return (
     <div className="forumBase">
-      <Accordion>
+      {mockData.events.map((mockData1) => (
+        <Accordion key={mockData.eventID} body={mockData}>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <Typography>Community Event Forum</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <div className="forumMessageCard">
+              <Card>
+                <Typography>
+                  {mockData.events[0].messages[0].messageBody}
+                </Typography>
+              </Card>
+              {mockData.events[0].messages[0].author} :{" "}
+              {mockData.events[0].messages[0].authorScore}
+              Like button{" "}
+              <Button onClick={() => null}>
+                {thumbsUpTrue ? <ThumbUpIcon /> : <ThumbUpAltOutlinedIcon />}
+              </Button>
+              <Button>
+                {!thumbsUpTrue ? (
+                  <ThumbDownAltOutlinedIcon />
+                ) : (
+                  <ThumbDownIcon />
+                )}
+              </Button>
+              {mockData.events[0].messages[0].messageVotes}
+            </div>
+          </AccordionDetails>
+        </Accordion>
+      ))}
+
+      {/* <Accordion key={mockData.eventID} body={mockData}> 
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel1a-content"
@@ -34,31 +71,11 @@ const ForumBase = () => {
           <div className="forumMessageCard">
             <Card>
               <Typography>
-                {mockData.events[0].messages[0].author} : {mockData.events[0].messages[0].authorScore}
+               
                 {mockData.events[0].messages[0].messageBody}
-                {mockData.events[0].messages[0].messageVotes}
-
-                {mockData.events[0].messages[1].author} : {mockData.events[0].messages[1].authorScore}
-                {mockData.events[0].messages[1].messageBody}
-                {mockData.events[0].messages[1].messageVotes}
-
-                {mockData.events[1].messages[0].author} : {mockData.events[1].messages[0].authorScore}
-                {mockData.events[1].messages[0].messageBody}
-                {mockData.events[1].messages[0].messageVotes}
-
-                {mockData.events[1].messages[1].author} : {mockData.events[1].messages[1].authorScore}
-                {mockData.events[1].messages[1].messageBody}
-                {mockData.events[1].messages[1].messageVotes}
-
-                {mockData.events[2].messages[0].author} : {mockData.events[2].messages[0].authorScore}
-                {mockData.events[2].messages[0].messageBody}
-                {mockData.events[2].messages[0].messageVotes}
-
-                {mockData.events[2].messages[1].author} : {mockData.events[2].messages[1].authorScore}
-                {mockData.events[2].messages[1].messageBody}
-                {mockData.events[2].messages[1].messageVotes}
               </Typography>
             </Card>
+            {mockData.events[0].messages[0].author} : {mockData.events[0].messages[0].authorScore}
             Like button{" "}
             <Button onClick={() => null}>
               {thumbsUpTrue ? <ThumbUpIcon /> : <ThumbUpAltOutlinedIcon />}
@@ -66,9 +83,10 @@ const ForumBase = () => {
             <Button>
               {!thumbsUpTrue ? <ThumbDownAltOutlinedIcon /> : <ThumbDownIcon />}
             </Button>
+                {mockData.events[0].messages[0].messageVotes}
           </div>
         </AccordionDetails>
-      </Accordion>
+      </Accordion> */}
     </div>
   );
 };
