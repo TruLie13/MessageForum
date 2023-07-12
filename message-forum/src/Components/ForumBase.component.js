@@ -10,6 +10,8 @@ import ThumbUpAltOutlinedIcon from "@mui/icons-material/ThumbUpAltOutlined";
 import ThumbDownAltOutlinedIcon from "@mui/icons-material/ThumbDownAltOutlined";
 import "./ForumBase.scss";
 import { useState } from "react";
+import { mockUsers } from "../mockData";
+import { mockData } from "../mockData";
 
 const ForumBase = () => {
   const [thumbsUpTrue, setThumbsUpTrue] = useState(false);
@@ -32,10 +34,29 @@ const ForumBase = () => {
           <div className="forumMessageCard">
             <Card>
               <Typography>
-                Et consequuntur autem aut enim perferendis et deserunt ullam et
-                pariatur optio aut tenetur aspernatur. Ut soluta sint qui
-                perferendis fuga rem laboriosam perferendis aut molestias modi
-                ut ducimus velit non minima enim qui ipsum beatae.
+                {mockData.events[0].messages[0].author} : {mockData.events[0].messages[0].authorScore}
+                {mockData.events[0].messages[0].messageBody}
+                {mockData.events[0].messages[0].messageVotes}
+
+                {mockData.events[0].messages[1].author} : {mockData.events[0].messages[1].authorScore}
+                {mockData.events[0].messages[1].messageBody}
+                {mockData.events[0].messages[1].messageVotes}
+
+                {mockData.events[1].messages[0].author} : {mockData.events[1].messages[0].authorScore}
+                {mockData.events[1].messages[0].messageBody}
+                {mockData.events[1].messages[0].messageVotes}
+
+                {mockData.events[1].messages[1].author} : {mockData.events[1].messages[1].authorScore}
+                {mockData.events[1].messages[1].messageBody}
+                {mockData.events[1].messages[1].messageVotes}
+
+                {mockData.events[2].messages[0].author} : {mockData.events[2].messages[0].authorScore}
+                {mockData.events[2].messages[0].messageBody}
+                {mockData.events[2].messages[0].messageVotes}
+
+                {mockData.events[2].messages[1].author} : {mockData.events[2].messages[1].authorScore}
+                {mockData.events[2].messages[1].messageBody}
+                {mockData.events[2].messages[1].messageVotes}
               </Typography>
             </Card>
             Like button{" "}
