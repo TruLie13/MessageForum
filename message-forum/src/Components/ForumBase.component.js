@@ -24,26 +24,25 @@ const ForumBase = () => {
 
   return (
     <div className="forumBase">
-      {mockData.events.map((mockData1) => (
-        <Accordion key={mockData.eventID} body={mockData}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1a-content"
-            id="panel1a-header"
-          >
-            <Typography>Community Event Forum</Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <div className="forumMessageCard">
-              <Card>
-                <Typography>
-                  {mockData.events[0].messages[0].messageBody}
-                </Typography>
-              </Card>
-              {mockData.events[0].messages[0].author} :{" "}
-              {mockData.events[0].messages[0].authorScore}
+      {
+  mockData.events.map((event) => (
+    <Accordion key={event.eventID} body={event}>
+      <AccordionSummary
+        expandIcon={<ExpandMoreIcon />}
+        aria-controls="panel1a-content"
+        id="panel1a-header"
+      >
+        <Typography>Community Event Forum</Typography>
+      </AccordionSummary>
+      <AccordionDetails>
+        <div className="forumMessageCard">
+          {event.messages.map((message) => (
+            <Card key={message.messageID}>
+              <Typography>{message.messageBody}</Typography>
+              <div>
+                {message.author} | {message.authorScore} win rate
+              </div>
               <div className="likeDislikeButtons">
-                Like button{" "}
                 <Button onClick={thumbFlip}>
                   {thumbsUpTrue === null || thumbsUpTrue === false ? (
                     <ThumbUpAltOutlinedIcon />
@@ -58,12 +57,16 @@ const ForumBase = () => {
                     <ThumbDownIcon />
                   )}
                 </Button>
+                {message.messageVotes}
               </div>
-              {mockData.events[0].messages[0].messageVotes}
-            </div>
-          </AccordionDetails>
-        </Accordion>
-      ))}
+            </Card>
+          ))}
+        </div>
+      </AccordionDetails>
+    </Accordion>
+  ))
+}
+
     </div>
   );
 };
