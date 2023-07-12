@@ -71,8 +71,29 @@ const ForumBase = () => {
           <div className="forumMessageCard">
             <Card>
               <Typography>
-               
+                {mockData.events[0].messages[0].author} : {mockData.events[0].messages[0].authorScore}
                 {mockData.events[0].messages[0].messageBody}
+                {mockData.events[0].messages[0].messageVotes}
+
+                {mockData.events[0].messages[1].author} : {mockData.events[0].messages[1].authorScore}
+                {mockData.events[0].messages[1].messageBody}
+                {mockData.events[0].messages[1].messageVotes}
+
+                {mockData.events[1].messages[0].author} : {mockData.events[1].messages[0].authorScore}
+                {mockData.events[1].messages[0].messageBody}
+                {mockData.events[1].messages[0].messageVotes}
+
+                {mockData.events[1].messages[1].author} : {mockData.events[1].messages[1].authorScore}
+                {mockData.events[1].messages[1].messageBody}
+                {mockData.events[1].messages[1].messageVotes}
+
+                {mockData.events[2].messages[0].author} : {mockData.events[2].messages[0].authorScore}
+                {mockData.events[2].messages[0].messageBody}
+                {mockData.events[2].messages[0].messageVotes}
+
+                {mockData.events[2].messages[1].author} : {mockData.events[2].messages[1].authorScore}
+                {mockData.events[2].messages[1].messageBody}
+                {mockData.events[2].messages[1].messageVotes}
               </Typography>
             </Card>
             {mockData.events[0].messages[0].author} : {mockData.events[0].messages[0].authorScore}
